@@ -1,0 +1,11 @@
+CurrencyConverter==0.17.7
+folium==0.14.0
+inflection==0.5.1
+matplotlib==3.7.1
+numpy==1.24.2
+pandas==2.0.0
+Pillow==9.5.0
+Pillow==9.5.0
+plotly==5.14.1
+streamlit==1.22.0
+streamlit_folium==0.11.1
