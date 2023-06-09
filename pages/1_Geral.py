@@ -1,14 +1,13 @@
 import os
-import pandas as pd
-import numpy as np
-import funcoes_zomato as fz
-import streamlit as st
-from PIL import Image
-import plotly.express as px
+import numpy                as np
+import pandas               as pd
+import streamlit            as st
+import funcoes_zomato       as fz
 import plotly.graph_objects as go
-from itertools import cycle
-from plotly.subplots import make_subplots
 
+from PIL                import Image
+from itertools          import cycle
+from plotly.subplots    import make_subplots
 
 #==================================================== LEITURA DA FONTE DE DADOS =========================================================================
 BASE_DIR = os.path.abspath('')                                           #Pasta onde se encontra o Home.py
@@ -63,7 +62,7 @@ with st.sidebar:
     st.caption('Alguma dúvida ou sugestão? Entre em contato: mayconrochads@gmail.com')
 #=========================================================== INTERAÇÕES =================================================================================
 
-#------------------------------APLICA ALTERAÇÃO DO FILTRO DE PAISES--------------------------------
+#------------------------------APLICA ALTERAÇÃO DO FILTRO DE PAÍSES--------------------------------
 if 'Todos' in options_pais: 
     df = df
 else:

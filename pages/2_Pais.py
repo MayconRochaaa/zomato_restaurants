@@ -1,11 +1,11 @@
 import os
-import numpy as np
-import pandas as pd
-import funcoes_zomato as fz
-import streamlit as st
-from PIL import Image
+import numpy                as np
+import pandas               as pd
+import streamlit            as st
+import funcoes_zomato       as fz
 import plotly.graph_objects as go
 
+from PIL import Image
 
 #==================================================== LEITURA DA FONTE DE DADOS =========================================================================
 BASE_DIR = os.path.abspath('')                                           #Pasta onde se encontra o Home.py

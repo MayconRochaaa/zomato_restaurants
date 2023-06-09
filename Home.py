@@ -1,11 +1,13 @@
 import os
-import pandas as pd
-import funcoes_zomato as fz
-import streamlit as st
 import folium
-from folium.plugins import MarkerCluster
-from streamlit_folium import folium_static
-from PIL import Image
+import pandas           as pd
+import streamlit        as st
+import funcoes_zomato   as fz
+
+from PIL                import Image
+from folium.plugins     import MarkerCluster
+from streamlit_folium   import folium_static
+
 
 #==================================================== LEITURA DA FONTE DE DADOS =========================================================================
 BASE_DIR = os.path.abspath('')                                  #Pasta onde se encontra o Home.py
@@ -88,7 +90,7 @@ with st.container(): #IMPLEMENTAÇÃO DO MAPA COM O FOLIUM
         html = "<p><strong>Nome do restaurante:{}</strong></p>"
         html += "<p>Preço: {} ({}) para dois"
         html += "<br />Nota: {}/5.0"
-        html += "<br />Número de valiações: {}"
+        html += "<br />Número de avaliações: {}"
         html = html.format(name, price_for_two, currency, rating, votes)
 
         popup = folium.Popup(
@@ -102,7 +104,7 @@ with st.container(): #IMPLEMENTAÇÃO DO MAPA COM O FOLIUM
             icon=folium.Icon(color=color),
         ).add_to(marker_cluster)
         
-    with st.spinner('Aguarde um momento enquanto o mapa é carregado.'): #ICONE DE CARREGAMENTO DO MAPA
+    with st.spinner('Aguarde um momento enquanto o mapa é carregado.'): #ÍCONE DE CARREGAMENTO DO MAPA
         folium_static(m, 900, 500)
 
     

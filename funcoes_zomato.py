@@ -1,7 +1,8 @@
 #FUNÇÕES CRIADAS PARA ELABORAÇÃO DA PÁGINA
 import inflection 
-from currency_converter import CurrencyConverter
+
 from datetime import date
+from currency_converter import CurrencyConverter
 
 #ALTERAÇÃO DO CÓDIGO DOS PAÍSES PELOS RESPECTIVOS NOMES
 COUNTRIES = {
