@@ -180,15 +180,15 @@ else:
         realiza = realiza.groupby('city').mean().sort_values(by='aggregate_rating',ascending=False).reset_index()
         nao_realiza = nao_realiza.groupby('city').mean().sort_values(by='aggregate_rating',ascending=False).reset_index()
 
-        #Se existe algum restaurante que não realiza o serviço selecionado é plotado o gráfico borboleta
+        #Se existe algum restaurante que não realiza o serviço selecionado é plotado o gráfico comparando
         if nao_realiza['aggregate_rating'].sum() != 0:
-            fig = go.Figure(data=[go.Bar(name = text[casoi], x=realiza['city'], y=nao_realiza['aggregate_rating'],marker_color='#ed7d31'),
-                                    go.Bar(name = f'Não {text[casoi]}', x=nao_realiza['city'], y = nao_realiza['aggregate_rating'],marker_color='#4472c4')])
+            fig = go.Figure(data=[go.Bar(name = f'Não {text[casoi]}', x=nao_realiza['city'], y = nao_realiza['aggregate_rating'],marker_color='#4472c4'),
+                                  go.Bar(name = text[casoi], x=realiza['city'], y=nao_realiza['aggregate_rating'],marker_color='#ed7d31')])
             fig.update_layout(barmode='group', legend=dict(x=-0.005, y=1.2, orientation='h'),
                                 yaxis_title='Nota média',
                                 xaxis_title='Cidade')
  
-        else: #Caso todos os restaurantes realizaem o serviço selecionado é plotado um gráfico de barras convencional
+        else: #Caso todos os restaurantes realizem o serviço selecionado é plotado um gráfico de barras convencional
             fig = go.Figure(); fig.add_trace(go.Bar(name = text[casoi],y=realiza['aggregate_rating'],
                                                     x=realiza['city'], 
                                                     orientation='v', 
@@ -203,7 +203,7 @@ else:
         st.plotly_chart(fig,use_container_width=True) 
           
     with st.container():
-        #Gráfico de barras empilhadas da coluna de culinarias
+        #Gráfico de barras da coluna de culinarias
         df_count = df_culi.groupby(['country', 'cuisines']).size().reset_index(name='count').copy()
         dfauaux =  df_count.loc[:,['country', 'count']].groupby('country').sum().reset_index()
         df_top_5_pc = df_count
