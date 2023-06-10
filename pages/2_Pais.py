@@ -182,8 +182,8 @@ else:
 
         #Se existe algum restaurante que não realiza o serviço selecionado é plotado o gráfico comparando
         if nao_realiza['aggregate_rating'].sum() != 0:
-            fig = go.Figure(data=[go.Bar(name = f'Não {text[casoi]}', x=nao_realiza['city'], y = nao_realiza['aggregate_rating'],marker_color='#4472c4'),
-                                  go.Bar(name = text[casoi], x=realiza['city'], y=nao_realiza['aggregate_rating'],marker_color='#ed7d31')])
+            fig = go.Figure(data=[go.Bar(name = f'Não {text[casoi]}', x=nao_realiza['city'], y = nao_realiza['aggregate_rating'],marker_color='#ed7d31'),
+                                  go.Bar(name = text[casoi], x=realiza['city'], y=nao_realiza['aggregate_rating'],marker_color='#4472c4')])
             fig.update_layout(barmode='group', legend=dict(x=-0.005, y=1.2, orientation='h'),
                                 yaxis_title='Nota média',
                                 xaxis_title='Cidade')
