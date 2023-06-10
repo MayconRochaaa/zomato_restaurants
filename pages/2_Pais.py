@@ -194,7 +194,7 @@ else:
                                                     orientation='v', 
                                                     width=0.7, 
                                                     showlegend=True, 
-                                                    marker_color='#ed7d31'), ); 
+                                                    marker_color='#4472c4'), ); 
 
             fig.update_layout(title_text=f"Avaliação média dos restaurantes das cidades (Todos {text[casoi]})")
             
