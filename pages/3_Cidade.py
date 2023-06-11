@@ -72,6 +72,7 @@ range_selecionadoinf = df['average_cost_for_two'] >= values[0]; df = df.loc[rang
 df = df[df['country'] == options_pais]
 df = df[df['city'] == options_cidade]
 
+
 #================================== Visão Cidade ==================================================================
 st.title('Visão cidade: ', help='No menu ao lado você pode filtrar a nota e preço dos restaurantes.')
 
@@ -100,7 +101,25 @@ else:
             st.metric(label = 'Custo médio de uma refeição no país:', value = f'${aux.iloc[0]}')
     
     st.markdown('''---''')
+    
     with st.container(): #Gráfico borboleta
+        
+        st.markdown('Informações da preferência de culinarias da cidade de acordo com os bairros selecionados:')
+
+        #Seleção de bairros para comparação
+        bairro = st.multiselect('Selecione um ou mais bairros', np.append('Todos', df['locality'][df['city']==options_cidade].unique()),
+                                default = ['Todos'])
+
+        if len(bairro)==0:
+            st.error('Selcione ao menos um bairro')
+        elif (('Todos' in bairro) and (len(bairro)==1)):
+            df = df
+        else:
+            Bairros = df['locality'].isin(bairro)
+            df = df.loc[Bairros,:]
+
+        #Calcula o dataframe de culunarias levando em consideração os bairros
+        df_culi = fz.explode_column(df,'cuisines','city')
         
         fig = make_subplots(rows=1, cols=2, specs=[[{}, {}]], shared_xaxes=False,
         shared_yaxes=True, horizontal_spacing=0)
@@ -136,22 +155,6 @@ else:
     st.markdown('''---''')
     with st.container(): 
         
-        st.markdown('Informações da preferência de culinarias da cidade de acordo com os bairros selecionados:')
-        
-        #Seleção de bairros para comparação
-        bairro = st.multiselect('Selecione um ou mais bairros', np.append('Todos', df['locality'][df['city']==options_cidade].unique()),
-                                default = ['Todos'])
-        
-        if len(bairro)==0:
-            st.error('Selcione ao menos um bairro')
-        elif (('Todos' in bairro) and (len(bairro)==1)):
-            df = df
-        else:
-            Bairros = df['locality'].isin(bairro)
-            df = df.loc[Bairros,:]
-        
-        #Calcula o dataframe de culunarias levando em consideração os bairros
-        df_culi = fz.explode_column(df,'cuisines','city')
     #--------------------------------------------------------------------------------------------------------------------
 
         df_count = df_culi.groupby(['city', 'cuisines']).size().reset_index(name='count').copy()

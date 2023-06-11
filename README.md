@@ -202,6 +202,34 @@ cidade temos as informações gerais da cidade selecionada e de métricas de res
   - A Índia é o único país com quantidade significativa de restaurantes que não oferecem serviços de entrega, reserva e pedidos online, provavelmente pelo trânsito caótico que existe
   na maioria das cidades indianas. Isso pode ser um dos fatores da Índia possuir o menor valor de prato para dois e ter a segunda pior avaliação média1 4.0. Entretanto, as cidades Gangtok
   e Shimla, que oferecem esses serviços em todos seus restaurantes, possuem avaliações menores que a média do país (1.7 e 3.3, respectivamente);
-  
-  
 
+  - Os EUA é o país com mais restaurantes cadastrados com notas acima de 4.5, superando a Índia, que possui 545.
+
+# 5.0 - Produto final do projeto:
+
+O arquivo "JN_Zomato.ipynb", presente nesse repositório, é um JupyterNotebook que contém todas as questões apresentadas na seção 1.2. Além disso foi desenvolvido um 
+dashboard interativo, como comentado na seção 3.0, ele pode ser acessado clicando [aqui](https://mr-zomato-restaurants.streamlit.app).
+
+Ao acessar a página o usuário vê a página Home, onde ele tem informações gerais do dashboard e um menu lateral onde ele pode alterar entre as visões geral, país e cidade, como mostrado na figura: ![Home](images/Screenshot_20230610_194441.webp)
+
+Ao alternar entre as abas o usuário pode filtrar restaurantes por nota e faixa de preço. Outras seleções estão disponíveis no menu a depender de qual aba o usuário se encontra: em Geral é possível selecionar os países para comparação, por padrão todos países são selecionados; na aba País apenas um país pode ser escolhido e surge uma opção de seleção de cidades, que por padrão é escolhido todas cidades do país; por fim, na aba cidade o usuário pode escolhes apenas um país e uma cidade pertencente a esse país. A figura abaixo mostra uma visualização dessas opções: ![Home](images/My%20project-1.png).
+
+Existem outros filtros específicos para determinados gráficos dentro das páginas, em Geral podemos selecionar a quantidade de culinarias que são mostradas por país, como ilustrado na imagem a seguir: ![Home](images/barra_geral.png)![Home](images/barra_geral2.png).
+
+Na página País é possível fazer comparações com base nos serviços oferecidos, como mostrado abaixo: ![Home](images/comp_pais.png)![Home](images/comp_pais2.png)
+
+E na página Cidades, o usuário consegue filtrar os bairros da cidade escolhida.
+  
+# 6.0 - Conclusões:
+
+O objetivo do projeto foi concluído, foi criado um jupyter notebook que contém todas respostas solicitadas e também foi criado um dashboard que reúne as principais informações do negócio. Isso possibilita que o time de negócio tenha acesso de forma rápida e acessível as informações relevantes para tomadas de decisões.
+
+# 7.0 - Próximos passos
+
+  - Implementar novas visões de negócio, como por exemplo um estudo mais detalhado das culinárias por restaurantes;
+
+  - Reduzir o número de métricas;
+
+  - Agrupar os tipos de culinárias e bairros que são redundantes;
+  
+  - Criar novos filtros

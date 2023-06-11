@@ -45,7 +45,7 @@ with st.sidebar: #Semelhante à barra da página geral, porém agora a escolha d
                                         default = ['Todas']) 
 
     st.markdown('''---''')
-    
+    st.text('Filtros por nota e preço')
     nota_slider = (st.slider('Nota minima:', 
                                     value = 0.0, 
                                     min_value = 0.0, 
