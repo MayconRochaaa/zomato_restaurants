@@ -233,3 +233,5 @@ O objetivo do projeto foi concluído, foi criado um jupyter notebook que contém
   - Agrupar os tipos de culinárias e bairros que são redundantes;
   
   - Criar novos filtros
+
+# Contato: [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mayconrocha14/)  [![Gmail](https://img.shields.io/badge/-Gmail-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:mayconrochads@gmail.com)  [![Discord](https://img.shields.io/badge/-Discord-5865F2?style=flat-square&logo=discord&logoColor=white)](https://discord.com/users/Marimbondo#7836)
